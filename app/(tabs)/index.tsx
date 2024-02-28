@@ -1,10 +1,7 @@
-import { StyleSheet } from 'react-native';
-
-import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-
 import React, { useState } from 'react';
 import { Button } from 'react-native';
+import styles from  '../styles'
 
 const phrases = [
   '"A nossa felicidade será naturalmente proporcional em relação à felicidade que fizermos para os outros." ',
@@ -15,9 +12,7 @@ const phrases = [
 
 // TO START THE APP: npm start
 
-// TODO 1: fazer página com várias opções de meditação e deixar disponíveis, preces tbm
-
-// TODO 2: ver como fazer pra mandar os estilos pra outra página
+// TODO: ver como fazer pra mandar os estilos pra outra página
 
 const App = () => {
   const [randomPhrase, setRandomPhrase] = useState('');
@@ -35,11 +30,7 @@ const App = () => {
         }}>
 
         <View>
-          <Text style={{
-            fontSize: 40,
-            padding: 20,
-            marginTop: 100,
-          }}>Bem vindo(a) ao AppEspirita!</Text>
+          <Text style={styles.h1}>Bem vindo(a) ao AppEspirita!</Text>
           <Text style={{
             fontSize: 25,
             padding: 20,
