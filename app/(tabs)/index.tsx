@@ -1,7 +1,8 @@
 import { Text, View } from '@/components/Themed';
 import React, { useState } from 'react';
-import { Button } from 'react-native';
-import styles from  '../styles'
+import { Button, ScrollView } from 'react-native';
+import styles from  '../styles';
+import { Card } from '@rneui/themed';
 
 const phrases = [
   '"A nossa felicidade será naturalmente proporcional em relação à felicidade que fizermos para os outros." ',
@@ -23,32 +24,66 @@ const App = () => {
   };
 
   return (
+
+    <ScrollView>
       <View style={{ 
           flex: 1, 
           // justifyContent: 'space-around', 
-          alignItems: 'center',
+          // alignItems: 'center',
         }}>
 
         <View>
-          <Text style={styles.h1}>Bem vindo(a) ao AppEspirita!</Text>
-          <Text style={{
+          <Text style={styles.h2}>Lembrete Espiritual:</Text>
+        </View>
+
+        <View
+            style={{
+            borderLeftWidth: 3,
+            borderLeftColor: 'white',
+            marginLeft: 30,
+            marginTop: 30,
+            }}
+        >
+          <Text
+          style={{
+            paddingLeft: 15,
             fontSize: 25,
-            padding: 20,
-          }} >Veja uma frase de Kardec clicando no botão:</Text>
+          }}
+        >{randomPhrase} - Allan Kardec</Text>
         </View>
 
         <View style={{
-          marginTop: 40,
+          marginTop: 20,
           padding: 30,
         }}>
           <Button title="Ler Frase do Dia" onPress={getRandomPhrase} />
           <Text style={{
             marginTop: 40,
-            padding: 30,
             fontSize: 25,
-          }}>{randomPhrase} - Allan Kardec</Text>
+          }}></Text>
         </View>
+
+        <View>
+          <Text style={styles.h2}>Meditação Guiada:</Text>
+        </View>
+
+        <Card>
+          <Card.Title
+            style={{
+              fontSize: 25,
+              textAlign: 'left'
+            }}
+          >Energia do Sol</Card.Title>
+          <Text style={styles.cardSubtitle}>
+            10min
+          </Text>
+          <Text style={styles.cardTheme}>
+            Tema: Felicidade
+          </Text>
+        </Card>
+
       </View>
+    </ScrollView>
   );
 };
 
