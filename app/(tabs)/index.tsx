@@ -13,8 +13,6 @@ const phrases = [
 
 // TO START THE APP: npm start
 
-// TODO: ver como fazer pra mandar os estilos pra outra página
-
 const App = () => {
   const [randomPhrase, setRandomPhrase] = useState('');
 
@@ -25,61 +23,69 @@ const App = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
-    <Text style={styles.h2}>Lembrete Espiritual:</Text>
-    <View
-      style={{
-        borderLeftWidth: 3,
-        borderLeftColor: 'black',
-        marginLeft: 30,
-        marginTop: 30,
-      }}
-    >
-      <Text
+      <Text style={styles.h2}>Lembrete Espiritual:</Text>
+      <View
         style={{
-          paddingLeft: 15,
-          fontSize: 25,
-          backgroundColor: '#c7edff',
-          color: '#1488bf',
+          borderLeftWidth: 3,
+          borderLeftColor: 'black',
+          marginLeft: 30,
+          marginTop: 30,
         }}
       >
-        "Fé inabalável só o é a que pode encarar frente a frente a razão, em todas as épocas da Humanidade."
-      </Text>
+        <Text
+          style={{
+            paddingLeft: 15,
+            fontSize: 25,
+            backgroundColor: '#c7edff',
+            color: '#1488bf',
+          }}
+        >
+          "Fé inabalável só o é a que pode encarar frente a frente a razão, em todas as épocas da Humanidade."
+        </Text>
+        
+      </View>
+      <Text style={styles.quoteAuthor}>Allan Kardec</Text>
+
+      <Text style={styles.h2}>Meditação Guiada:</Text>
+      <Card containerStyle={styles.cardContainer}>
+        <Card.Title
+          style={{
+            fontSize: 25,
+            textAlign: 'left'
+          }}
+        >
+          Energia do Sol
+        </Card.Title>
+        <Text style={styles.cardSubtitle}>
+          10min
+        </Text>
+        <Text style={styles.cardTheme}>
+          Tema: Felicidade
+        </Text>
+      </Card>
+
+      <Text style={styles.h2}>Prece Guiada:</Text>
       
-    </View>
-    <Text style={styles.quoteAuthor}>Alan Kardec</Text>
-
-    <Text style={styles.h2}>Meditação Guiada:</Text>
-    <Card containerStyle={styles.cardContainer}>
-      <Card.Title
-        style={{
-          fontSize: 25,
-          textAlign: 'left'
-        }}
-      >
-        Energia do Sol
-      </Card.Title>
-      <Text style={styles.cardSubtitle}>
-        10min
-      </Text>
-      <Text style={styles.cardTheme}>
-        Tema: Felicidade
-      </Text>
-    </Card>
-
-    <Text style={styles.h2}>Prece Guiada:</Text>
-    <Card containerStyle={styles.cardContainer}>
-      <Card.Title
-        style={{
-          fontSize: 25,
-          textAlign: 'left'
-        }}
-      >
-        Gratidão
-      </Card.Title>
-      <Text style={styles.cardSubtitle}>
-        5min
-      </Text>
-    </Card>
+      <Card containerStyle={styles.cardContainer}>
+        <View style={styles.cardContent}>
+          <View style={styles.cardInfo}>
+            <Card.Title
+              style={{
+                fontSize: 25,
+                textAlign: 'left'
+              }}
+            >
+              Gratidão
+            </Card.Title>
+            <Text style={styles.cardSubtitle}>
+              5min
+            </Text>
+          </View>
+          <View style={styles.image}>
+            <Card.Image source={require('../../assets/images/meditation.png')} />
+          </View>
+        </View>
+      </Card>
   </ScrollView>
   );
 }

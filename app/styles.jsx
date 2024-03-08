@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
   cardSubtitle: {
     fontSize: 20,
     color: 'grey',
+    // flex: 3,
   },
   cardTheme: {
     fontSize: 20,
@@ -20,10 +21,10 @@ const styles = StyleSheet.create({
   },
   cardContainer: {
     borderRadius: 10,
+    // flexDirection: 'row',
   },
   container: {
     backgroundColor: '#c7edff',
-    flex: 3,
   },
   quoteAuthor: {
     color: 'black',
@@ -33,6 +34,19 @@ const styles = StyleSheet.create({
     // marginRight: 40,
     marginLeft: 40,
     marginTop: 10,
+  },
+  image: {
+    height: 10,
+    width: 10,
+    backgroundColor: 'white',
+    flex: 1,
+  },
+  cardInfo: {
+    backgroundColor: 'white', // has to be the same color as the card, idk why its different, just bc it has it's own view i guess
+    flex: 3,
+  },
+  cardContent: {
+    flexDirection: 'row',
   }
 });
 
