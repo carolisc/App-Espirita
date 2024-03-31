@@ -1,8 +1,9 @@
 import { Text, View } from '@/components/Themed';
 import React, { useState } from 'react';
-import { Button, ScrollView } from 'react-native';
+import { Button, ScrollView, Dimensions, ImageBackground } from 'react-native';
 import styles from  '../styles';
 import { Card } from '@rneui/themed';
+
 
 const phrases = [
   '"A nossa felicidade será naturalmente proporcional em relação à felicidade que fizermos para os outros." ',
@@ -21,73 +22,85 @@ const App = () => {
     setRandomPhrase(phrases[randomIndex]);
   };
 
+  const bgImage = require('../../assets/images/background-homepage.jpg')
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Text style={styles.h2}>Lembrete Espiritual:</Text>
-      <View
-        style={{
-          borderLeftWidth: 3,
-          borderLeftColor: 'black',
-          marginLeft: 30,
-          marginTop: 30,
-        }}
-      >
-        <Text
+    <ScrollView>  {/*contentContainerStyle={styles.container} excluí o container de styles */} 
+      <ImageBackground source={bgImage} style={styles.bgImage} >
+        <Text style={styles.h2BlueBg}>Lembrete Espiritual:</Text>
+        <View
           style={{
-            paddingLeft: 15,
-            fontSize: 25,
-            backgroundColor: '#c7edff',
-            color: '#1488bf',
+            borderLeftWidth: 3,
+            borderLeftColor: '#1488bf',
+            marginLeft: 30, 
+            marginTop: 30,
+            backgroundColor: 'rgba(255, 255, 255, .0)',
           }}
         >
-          "Fé inabalável só o é a que pode encarar frente a frente a razão, em todas as épocas da Humanidade."
-        </Text>
-        
-      </View>
-      <Text style={styles.quoteAuthor}>Allan Kardec</Text>
-
-      <Text style={styles.h2}>Meditação Guiada:</Text>
-      <Card containerStyle={styles.cardContainer}>
-        <Card.Title
-          style={{
-            fontSize: 25,
-            textAlign: 'left'
-          }}
-        >
-          Energia do Sol
-        </Card.Title>
-        <Text style={styles.cardSubtitle}>
-          10min
-        </Text>
-        <Text style={styles.cardTheme}>
-          Tema: Felicidade
-        </Text>
-      </Card>
-
-      <Text style={styles.h2}>Prece Guiada:</Text>
-      
-      <Card containerStyle={styles.cardContainer}>
-        <View style={styles.cardContent}>
-          <View style={styles.cardInfo}>
-            <Card.Title
-              style={{
-                fontSize: 25,
-                textAlign: 'left'
-              }}
-            >
-              Gratidão
-            </Card.Title>
-            <Text style={styles.cardSubtitle}>
-              5min
-            </Text>
-          </View>
-          <View style={styles.image}>
-            <Card.Image source={require('../../assets/images/meditation.png')} />
-          </View>
+          <Text
+            style={{
+              paddingLeft: 15,
+              fontSize: 25,
+              color: 'white',
+              fontFamily: 'OpenSans_300Light',
+            }}
+          >
+            "Fé inabalável só o é a que pode encarar frente a frente a razão, em todas as épocas da Humanidade."
+          </Text>
+          
         </View>
-      </Card>
-  </ScrollView>
-  );
-}
+        <Text style={styles.quoteAuthor}>Allan Kardec</Text>
+
+        <Text style={styles.h2}>Meditação Guiada:</Text>
+        <Card containerStyle={styles.cardContainer}>
+          <Card.Title
+            style={{
+              fontSize: 25,
+              textAlign: 'left',
+              fontFamily: 'OpenSans_300Light',
+            }}
+          >
+            Energia do Sol
+          </Card.Title>
+          <Text style={styles.cardSubtitle}>
+            10min
+          </Text>
+          <Text style={styles.cardTheme}>
+            Tema: Felicidade
+          </Text>
+        </Card>
+
+        <Text style={styles.h2}>Prece Guiada:</Text>
+
+        <Card containerStyle={styles.cardContainer}>
+          <View style={styles.cardContent}>
+            <View style={styles.cardInfo}>
+              <Card.Title
+                style={{
+                  fontSize: 25,
+                  textAlign: 'left',
+                  fontFamily: 'OpenSans_300Light',
+                }}
+              >
+                Gratidão
+              </Card.Title>
+              <Text style={styles.cardSubtitle}>
+                5min
+              </Text>
+            </View>
+            <View style={styles.cardImage}>
+              <Card.Image 
+                style={{ maxHeight: 70, maxWidth: 70 }}
+                resizeMode="contain"
+                source={require('../../assets/images/meditation.png')} 
+              />
+            </View>
+          </View>
+        </Card>
+      </ImageBackground>
+    </ScrollView>
+    );
+  }
+  
 
 export default App;
