@@ -13,6 +13,10 @@ const phrases = [
 ];
 
 // TO START THE APP: npm start
+// TODO idea: have images as background for the cards instead of side icons, then only have play buttons, but they need to match the bg sunrise colors, and be conceptual, although they won't be transparent sadly :/
+// TODO fix not being able to scroll a little bit past the last card
+// TODO make the titles, links to other pages
+// TODO change cards to bootstrap, maybe seek a cards thing library to use
 
 const App = () => {
   const [randomPhrase, setRandomPhrase] = useState('');
